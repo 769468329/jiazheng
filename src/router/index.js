@@ -51,10 +51,17 @@ const routes = [
       component: User,
     },{
       path: 'product',
+<<<<<<< HEAD
       component:()=>import('@/views/manager/product/Product')
     },{
       path: 'order_confirm',
       component:()=>import('@/views/manager/order/OrderConfirm')
+=======
+      component: () => import('@/views/manager/product/Product'),
+    },{
+      path: 'order_confirm',
+      component: () => import('@/views/manager/order/OrderConfirm'),
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
     },{
       path: 'address',
       component: () => import('@/views/manager/address/Address'),
@@ -68,8 +75,14 @@ const routes = [
     name: 'login',
     component: Login
   },{
+<<<<<<< HEAD
     path: '/register',
     component:()=>import('@/views/Register')
+=======
+    path:'/register',
+    // 懒加载
+    component:() => import('@/views/Register')
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
   }
 ]
 

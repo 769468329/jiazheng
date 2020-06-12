@@ -9,7 +9,11 @@
         <div> <strong>名称：</strong> {{data.name}}</div>
         <div> <strong>价格：</strong> {{data.price}}</div>
         <div> <strong>描述：</strong> {{data.description}}</div>
+<<<<<<< HEAD
         <!-- 由于加上了v-model ， -->
+=======
+        <!-- 由于加上了v-model，所以步进器的默认值就不生效了，所以需要手动设置 -->
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
         <div> <van-stepper v-model="data.number" :default-value='0' :min="0" @change="numberChangeHandler(data)"/> </div>
       </van-col>
     </van-row>
@@ -26,16 +30,17 @@ export default {
   },
   methods:{
     ...mapMutations('shopcar',['addShopCar']),
+    // 步进器改变时触发
     numberChangeHandler(val){
+      // 参数封装
       let orderLine = {
         productId:val.id,
         productName:val.name,
         price:val.price,
         number:val.number
       }
-      console.log(orderLine);
+      // 调用购物车方法
       this.addShopCar(orderLine);
-      
     }
   }
 }
@@ -45,7 +50,10 @@ export default {
   margin:.5em 1em;
   padding: .5em;
   border-radius: 5px;
+<<<<<<< HEAD
   /* height: 80px; */
+=======
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
   border: 1px dotted #ccc;
 }
 

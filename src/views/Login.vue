@@ -1,11 +1,14 @@
 <template>
   <div class="login">
+    <!-- 头部 -->
     <div class="header">
       <div class="logo">jz</div>
       <div class="title">
         家政服务平台-顾客端
       </div>
     </div>
+
+    <!-- 登录输入框 -->
     <div class="form">
       <van-cell-group>
         <van-field
@@ -24,7 +27,11 @@
           required
         />
       </van-cell-group>
+<<<<<<< HEAD
       <!-- 登陆按钮 -->
+=======
+      <!-- 登录按钮 -->
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
       <div style="text-align:center;padding:1em" >
        <van-button 
         plain round 
@@ -53,6 +60,16 @@ export default {
   },
   methods:{
     ...mapActions("user",["login"]),
+<<<<<<< HEAD
+=======
+    // 注册
+    registerHandler(){
+      // 跳转到注册页面
+      this.$router.push({
+        path:'/register'
+      })
+    },
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
     // 登录
     loginHandler(){
       this.login(this.form)

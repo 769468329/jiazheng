@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <div class="home" style="margin-bottom: 40px;">
+=======
+  <div class="home">
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
     <!-- 轮播图片 -->
     <van-swipe :autoplay="3000">
       <van-swipe-item v-for="(item, index) in newAllProduct" :key="index">
@@ -20,7 +24,11 @@
     </van-grid>
 
     <!-- 所有的产品 -->
+<<<<<<< HEAD
     <van-grid :border="false" :column-num="1" :center='false' >
+=======
+    <van-grid :border="false" :column-num="1" :center='false'>
+>>>>>>> 98078e035f587d93463dfc28804b36333c3c8a80
       <van-grid-item v-for="item in allProduct" :key="item.id">
         <!-- 实现左右布局 -->
         <van-row>

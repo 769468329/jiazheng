@@ -12,6 +12,13 @@ import { Lazyload } from 'vant';
 
 Vue.use(Lazyload);
 
+// 导入第三方图标库
+import './assets/iconfont/icon.css'
+
+import { Lazyload } from 'vant';
+
+Vue.use(Lazyload);
+
 // 全局注册自定义组件
 import FullLayout from './components/FullLayout'
 import OrderItem from './components/OrderItem'
