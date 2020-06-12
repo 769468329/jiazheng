@@ -2,7 +2,7 @@
   <div class="address_item">
     <van-row>
       <van-col :span="3">
-        <div class="xing">
+        <div class="xing" @click='choiceHandler(data)'>
           张
         </div>
       </van-col>
@@ -23,7 +23,18 @@
 </template>
 <script>
 export default {
-  props:['data']
+  props:['data'],
+  methods:{
+    // 跳转至订单确认页面
+    choiceHandler(address){
+      this.$router.push({
+        path:'/manager/order_confirm',
+        query:{
+          address:JSON.stringify(address)
+        }
+      })
+    }
+  }
 }
 </script>
 <style scoped>

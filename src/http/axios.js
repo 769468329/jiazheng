@@ -3,7 +3,7 @@ import qs from 'qs'
 import {Toast} from 'vant'
 
 // 全局配置
-axios.defaults.baseURL = 'http://39.96.21.48:5588';
+axios.defaults.baseURL = 'http://39.108.98.130:5588';
 
 // 响应拦截器
 axios.interceptors.response.use(function (response) {
@@ -39,7 +39,7 @@ export function get (url, params) {
 }
 
 /**
- * 提交post请求 发送的数据为查询字符串，key=val&key=val
+ * 提交post请求 发送的数据为查询字符串，key=val&key=val 分页查询
 */
 export function post(url,data){
   return axios({

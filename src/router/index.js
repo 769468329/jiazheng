@@ -49,17 +49,32 @@ const routes = [
     },{
       path: 'user',
       component: User,
+    },{
+      path: 'product',
+      component:()=>import('@/views/manager/product/Product')
+    },{
+      path: 'order_confirm',
+      component:()=>import('@/views/manager/order/OrderConfirm')
+    },{
+      path: 'address',
+      component: () => import('@/views/manager/address/Address'),
+    },{
+      path: 'address_add',
+      component: () => import('@/views/manager/address/Add'),
     }]
   },
   {
     path: '/login',
     name: 'login',
     component: Login
+  },{
+    path: '/register',
+    component:()=>import('@/views/Register')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   routes
 })

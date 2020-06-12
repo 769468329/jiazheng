@@ -7,7 +7,7 @@
       <div class="name">{{info.name}}</div>
     </div>
     <div class="line" @click="toAddressHandler">
-      常用地址
+      新增地址
     </div>
     <div class="line" @click="logoutHandler">
       退出
@@ -19,8 +19,11 @@ import {mapState, mapActions} from 'vuex'
 export default {
   methods:{
     ...mapActions('user',['logout']),
+    // 跳转到地址新增页面
     toAddressHandler(){
-      
+      this.$router.push({
+        path:'/manager/address_add'
+      })
     },
     logoutHandler(){
       this.logout()
@@ -40,7 +43,6 @@ export default {
   padding-top: 46px;
   text-align: center;
 }
-
 .header .photo {
   margin: 0 auto;
   width: 10em;

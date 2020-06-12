@@ -6,24 +6,30 @@
     </van-row>
     <van-row>
       <van-col :span="6">
-        <img src="../assets/service.png" alt="">
+        <img v-if="data.orderLines[0].product.photo" :src="data.orderLines[0].product.photo" alt="">
+        <img v-else src="../assets/service.png" alt="">
+       
       </van-col>
       <van-col :span="16" :offset="2">
-        <p>擦玻璃、打扫卫生、清洗空调、{{data.customerId}}</p>
+        <!-- <p>擦玻璃、打扫卫生、清洗空调、{{data.customerId}}</p> -->
+        <!-- {{data.orderLines.product.name}} -->
+        <!-- {{data.orderLines.product.photo}} -->
+        <div  v-if='data.orderLines'>商品名称：{{data.orderLines[0].product.name}}</div>
         <div>服务时间：{{data.orderTime | datefmt}}</div>
         <div v-if='data.address'>服务地址：{{data.address.province}} {{data.address.city}} {{data.address.area}} {{data.address.address}}</div>
-        <div  v-if='data.address'>联系方式：{{data.address.telephone}}</div>
+        <div v-if='data.customer'>联系方式：{{data.customer.telephone}}</div>
       </van-col>
     </van-row>
     <div class="text-right">
-      共计 个服务，合计￥ {{data.total}}
+      共计 {{data.orderLines[0].number}} 个服务，合计￥ {{data.total}}
     </div>
   </div>
 </template>
 <script>
 export default {
   props:{
-    data:{type:Object}
+    data:{type:Object},
+  
   }
 }
 </script>

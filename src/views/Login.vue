@@ -24,11 +24,19 @@
           required
         />
       </van-cell-group>
+      <!-- 登陆按钮 -->
       <div style="text-align:center;padding:1em" >
        <van-button 
         plain round 
         @click="loginHandler" 
         style="width:100%">登录</van-button>
+      </div>
+      <!-- 注册按钮 -->
+      <div style="text-align:center;padding:1em" >
+       <van-button 
+        plain round 
+        @click="registerHandler" 
+        style="width:100%">注册</van-button>
       </div>
     </div>
   </div>
@@ -45,11 +53,19 @@ export default {
   },
   methods:{
     ...mapActions("user",["login"]),
+    // 登录
     loginHandler(){
       this.login(this.form)
       .then(()=>{
         //跳转到首页
         this.$router.push({path:'/manager/home'})
+      })
+    },
+    // 注册
+    registerHandler(){
+      // 跳转注册页面
+      this.$router.push({
+        path:'/register'
       })
     }
   }
